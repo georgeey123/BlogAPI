@@ -1,6 +1,6 @@
-const { body, validationResult } = require('express-validator');
+const { validationResult } = require('express-validator');
 const Post = require('../models/postModel');
-const User = require('../models/userModel');
+// const User = require('../models/userModel');
 
 // View all blog posts
 const getAllPosts = async (req, res) => {
@@ -8,7 +8,7 @@ const getAllPosts = async (req, res) => {
       const posts = await Post.find();
       res.json(posts);
     } catch (error) {
-      res.status(500).json({ message: 'Server Error' });
+      res.status(500).json({ message: 'An error occured... :(' });
     }
   };
   
